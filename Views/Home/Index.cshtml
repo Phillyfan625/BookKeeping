@@ -1,12 +1,37 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    <link href="~/css/form.css" rel="stylesheet" type="text/css" />
 }
+<script>function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+    </script>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <p>This is our book keeping application</p>
-    <p>This is our book keeping application</p>
+    <h1 class="display-4">Clients</h1>
+
+    <p>Bob Barker</p>
+    <button onclick="openForm()">Hire Me!</button>
+
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
 
 </div>
 
