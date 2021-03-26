@@ -7,5 +7,6 @@ namespace BookKeeping.Models
 {
     public class ClientModel
     {
+
     }
 }
