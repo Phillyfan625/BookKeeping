@@ -7,6 +7,11 @@ namespace BookKeeping.Models
 {
     public class ClientModel
     {
-
+        public int ClientID { get; set; } 
+        public string FirstName { get; set; } 
+        public string LastName { get; set; } 
+        public string PhoneNumner { get; set; } 
+        public string EmailAddress { get; set; } 
+        public int BookKeeperID { get; set; }
     }
 }
