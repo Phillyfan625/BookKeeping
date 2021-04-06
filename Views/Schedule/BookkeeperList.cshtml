@@ -1,5 +1,5 @@
 ﻿@*List of bookkkeepers*@ 
-
+@model BookkeeperModel 
 <header classs="jumbotron text-center">
     <img src ="~/images/Logo.png" class="img-fluid center-block"/>
 </header>
@@ -9,7 +9,12 @@
         <div class="img-thumbnail mt-3">
             <img class="imgprofile" src="~/images/profilepic.png" />
             <div class="figure-caption text-center">
-                <h5>Bookkeeper Name</h5>
+                <h5>
+                    @foreach (BookkeeperModel bookkeeper in Model.bookkeepers)
+                    { 
+                        @bookkeeper.FirstName
+                    }
+                            </h5>
                 <h6>A description should go here.</h6>
                 <button class="btn btn-primary">Hire!</button>
                 <hr />

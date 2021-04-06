@@ -15,7 +15,7 @@ namespace BookKeeping.Models
         public string FirstName { get; set; }
         public string Image { get; set; }
 
-
+        public IEnumerable<BookkeeperModel> bookkeepers { get; set; }
 
     }
 }
