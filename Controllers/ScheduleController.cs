@@ -23,14 +23,17 @@ namespace BookKeeping.Controllers
 
         public IActionResult BookkeeperDetails()
         {
-            return View(); 
+            var list = _context.Bookkeepers.ToList();
+            return View(list); 
         }
 
-        [HttpGet]
-        public IActionResult Get()
-        {
-            var Bookkeepers = _context.Bookkeepers.ToList();
-            return Ok(Bookkeepers);
-        }
+
+
+        //[HttpGet]
+        //public IActionResult Get()
+        //{
+        //    var Bookkeepers = _context.Bookkeepers.ToList();
+        //    return Ok(Bookkeepers);
+        //}
     }
 }

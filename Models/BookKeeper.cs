@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BookKeeping.Models
 {
-    public class BookkeeperModel
+    public class BookKeeper
     {
         public int BookKeeperID { get; set; }
         public string LastName { get; set; }
@@ -15,7 +15,19 @@ namespace BookKeeping.Models
         public string FirstName { get; set; }
         public string Image { get; set; }
 
-        public IEnumerable<BookkeeperModel> bookkeepers { get; set; }
+        public readonly BookKeepingContext context;
+
+        public BookKeeper(BookKeepingContext context)
+        {
+            this.context = context;
+        }
+
+        public IList<BookKeeper> Bookkeepers { get; set; }
+
+        public void Get()
+        {
+            Bookkeepers = context.Bookkeepers.ToList();
+        }
 
     }
 }
