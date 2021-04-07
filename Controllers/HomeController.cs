@@ -11,11 +11,11 @@ namespace BookKeeping.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly BookKeepingContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(BookKeepingContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -30,11 +30,13 @@ namespace BookKeeping.Controllers
 
         public IActionResult BookkeeperList()
         {
-            return View();
+            IList<BookKeeper> Bookkeepers = _context.BookKeeper.ToList();
+            return View(Bookkeepers);
         }
 
         public IActionResult BookkeeperDetails()
         {
+            
             return View();
         } 
 

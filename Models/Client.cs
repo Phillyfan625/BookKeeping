@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BookKeeping.Models
 {
-    public class ClientModel
+    public class Client
     {
         public int ClientID { get; set; } 
         public string FirstName { get; set; } 

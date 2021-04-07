@@ -27,8 +27,7 @@ namespace BookKeeping
         {
             services.AddControllersWithViews();
             services.AddMvc();
-            services.AddDbContext<BookKeepingContext>(
-                optionsBuilder => optionsBuilder.UseSqlServer(Configuration.GetConnectionString("Data")));
+            services.AddDbContext<BookKeepingContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:BooksDB"]));
 
         }
 

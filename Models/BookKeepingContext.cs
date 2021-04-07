@@ -8,19 +8,25 @@ namespace BookKeeping.Models
 {
     public class BookKeepingContext : DbContext 
     {
-        public BookKeepingContext(DbContextOptions<BookKeepingContext> options)
+        public BookKeepingContext(DbContextOptions options)
             : base(options)
         {
         }
 
-        public virtual DbSet<BookKeeper> Bookkeepers { get; set; } 
-        public virtual DbSet<ClientModel> Clients { get; set; }
+        public virtual DbSet<BookKeeper> BookKeeper { get; set; } 
+        public virtual DbSet<Client> Clients { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-            }
+            //if (!optionsBuilder.IsConfigured)
+            //{
+            //}
+            base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
     } 
 

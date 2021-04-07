@@ -15,19 +15,5 @@ namespace BookKeeping.Models
         public string FirstName { get; set; }
         public string Image { get; set; }
 
-        public readonly BookKeepingContext context;
-
-        public BookKeeper(BookKeepingContext context)
-        {
-            this.context = context;
-        }
-
-        public IList<BookKeeper> Bookkeepers { get; set; }
-
-        public void Get()
-        {
-            Bookkeepers = context.Bookkeepers.ToList();
-        }
-
     }
 }
