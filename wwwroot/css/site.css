@@ -78,3 +78,7 @@ body {
     margin-right: auto;
 }
 
+.thumbnails { 
+    float: left;
+}
+
