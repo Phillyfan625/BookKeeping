@@ -14,6 +14,7 @@ namespace BookKeeping.Models
         public int PayRate { get; set; }
         public string FirstName { get; set; }
         public string Image { get; set; }
+        public string Description { get; set; }
 
     }
 }
