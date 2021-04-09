@@ -11,7 +11,7 @@ namespace BookKeeping.Controllers
     {
         private readonly BookKeepingContext _context;
 
-        private BookKeeperListModel list;
+        private BookKeeperListModel list = new BookKeeperListModel();
 
         public ScheduleController(BookKeepingContext context)
         {
@@ -20,8 +20,8 @@ namespace BookKeeping.Controllers
 
         public IActionResult BookkeeperList()
         {
-            IList<BookKeeper> Bookkeepers = _context.BookKeeper.ToList();
-            return View(Bookkeepers);
+            list.Bookkeepers = _context.BookKeeper.ToList();
+            return View(list);
         }
 
         public IActionResult BookkeeperDetails()

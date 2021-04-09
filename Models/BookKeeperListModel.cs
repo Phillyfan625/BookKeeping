@@ -9,12 +9,12 @@ namespace BookKeeping.Models
     {
         public readonly BookKeepingContext context;
 
-        public BookKeeperListModel(BookKeepingContext context)
+        public BookKeeperListModel()
         {
-            this.context = context;
+            //this.context = context;
         }
 
-        //public IList<BookKeeper> Bookkeepers { get; set; }
+        public IEnumerable<BookKeeper> Bookkeepers { get; set; }
 
 
     }
