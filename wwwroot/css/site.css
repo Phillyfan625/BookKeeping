@@ -82,19 +82,15 @@ body {
     float: left;
 }
 
-.4star {
-    position: absolute;
-    clip: rect(0, 100px, 200px, 0);
-}
-
-.3star {
+#star4 {
 
 }
 
-.2star {
-
+#star3 {
 }
 
-.1star {
+#star2 {
+}
 
+#star1 {
 }
