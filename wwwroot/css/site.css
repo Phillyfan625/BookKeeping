@@ -84,23 +84,17 @@ body {
 .thumbnails { 
 }
 
-.star4 {
-    position: absolute;
-    clip: rect(0, 100px, 200px, 0);
-}
-
-.star3 {
+#star4 {
 
 }
 
-.star2 {
-
+#star3 {
 }
 
-.star1 {
-
+#star2 {
 }
 
+#star1 {
 /*BookkeeperDetails Page*/
 .detailsprofile { 
     background-color: lightgrey;
