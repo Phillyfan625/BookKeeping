@@ -1,4 +1,4 @@
-﻿@*display bookkeeper details with button to go to scheduling page*@
+﻿@model BookKeeper
 
 
 <button onclick="openForm()">Hire Me!</button>
@@ -17,3 +17,16 @@
         <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
     </form>
 </div>
+
+<div class="detailsprofile">
+    <img class="imgdetailsprofile" src="~/images/profilepic.png" />
+    <h3>@Model.FirstName @Model.LastName</h3> 
+    <h6>@Model.Description</h6> 
+    <h3>Phone Number: @Model.PhoneNumber</h3> 
+    <h3>Email: @Model.EmailAddress</h3>
+</div>
+
+<hr /> 
+<table>
+    <tr></tr>
+</table>

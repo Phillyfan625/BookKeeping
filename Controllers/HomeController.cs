@@ -34,10 +34,12 @@ namespace BookKeeping.Controllers
             return View(Bookkeepers);
         }
 
-        public IActionResult BookkeeperDetails()
+        public ViewResult BookkeeperDetails(int id)
         {
-            
-            return View();
+            var details = (from b in _context.BookKeeper
+                           where b.BookKeeperID == id
+                           select b).FirstOrDefault();
+            return View(details);
         } 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

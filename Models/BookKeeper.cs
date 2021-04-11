@@ -15,6 +15,7 @@ namespace BookKeeping.Models
         public string FirstName { get; set; }
         public string Image { get; set; }
         public string Description { get; set; }
+        //public Reviews Reviews { get; set; }
 
     }
 }

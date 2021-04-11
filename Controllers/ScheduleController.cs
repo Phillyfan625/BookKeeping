@@ -25,21 +25,9 @@ namespace BookKeeping.Controllers
         }
 
         public IActionResult BookkeeperDetails()
-        { 
+        {
+           
             return View(); 
         }
-
-        //public void Get()
-        //{
-        //    list.Bookkeepers = _context.Bookkeepers.ToList();
-        //}
-
-
-        //[HttpGet]
-        //public IActionResult Get()
-        //{
-        //    var Bookkeepers = _context.Bookkeepers.ToList();
-        //    return Ok(Bookkeepers);
-        //}
     }
 }

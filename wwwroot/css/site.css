@@ -70,31 +70,44 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
+/*BookkeeperList Page*/
 .imgprofile { 
     width: 200px; 
     height: 200px;
     display: block; 
     margin-left: auto; 
     margin-right: auto;
+    max-height: 100%; 
+    max-height: 100%;
 }
 
 .thumbnails { 
-    float: left;
 }
 
-.4star {
+.star4 {
     position: absolute;
     clip: rect(0, 100px, 200px, 0);
 }
 
-.3star {
+.star3 {
 
 }
 
-.2star {
+.star2 {
 
 }
 
-.1star {
+.star1 {
 
+}
+
+/*BookkeeperDetails Page*/
+.detailsprofile { 
+    background-color: lightgrey;
+}
+
+.imgdetailsprofile {
+    width: auto;
+    height: 150px;
+    float: left;
 }

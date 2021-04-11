@@ -10,18 +10,14 @@
             <div class="img-thumbnail mt-3 thumbnails">
                 <img class="imgprofile" src="~/images/profilepic.png" />
                 <div class="figure-caption text-center">
-                    <h5>@bookKeeper.FirstName @bookKeeper.LastName</h5>
+                    <a asp-action="BookkeeperDetails" asp-controller="Home" asp-route-id="@bookKeeper.BookKeeperID">
+                    @bookKeeper.FirstName @bookKeeper.LastName</a>
                     <h6>@bookKeeper.Description</h6>
-                    <button class="btn btn-primary">Hire!</button>
                     <hr />
                     <div class="BookKeeperRatings">
                         <img src="~/images/full-stars.png" class="4stars float-left"/>
                         <h6 class="text-right">@bookKeeper.PayRate.ToString("c")/hr</h6>
                     </div>
-
-                    
-                    
-
                 </div>
             </div>
         </div>
