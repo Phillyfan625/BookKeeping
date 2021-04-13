@@ -27,6 +27,15 @@
 </div>
 
 <hr /> 
-<table>
-    <tr></tr>
-</table>
+<div class="container">
+    @foreach (Reviews reviews in Model.Reviews)
+    {
+            <div><img src="~/images/full-stars.png" /></div>
+            <div><i>"@reviews.Comment"</i></div> 
+            @foreach (var c in reviews.Clients)
+            {
+                <div>@c.FirstName @c.LastName</div>
+            }
+        <hr />
+    }
+</div>

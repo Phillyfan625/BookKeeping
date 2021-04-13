@@ -12,7 +12,8 @@ namespace BookKeeping.Models
         public int ReviewID { get; set; } 
         public int ClientID { get; set; } 
         public string Comment { get; set; } 
-        public string Rating { get; set; } 
-        public string BookKeeperID { get; set; }
+        public int Rating { get; set; } 
+        public int BookKeeperID { get; set; }
+        public IEnumerable<Client> Clients { get; set; }
     }
 }

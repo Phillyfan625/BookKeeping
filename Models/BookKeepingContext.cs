@@ -14,7 +14,7 @@ namespace BookKeeping.Models
         }
 
         public virtual DbSet<BookKeeper> BookKeeper { get; set; } 
-        public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet <Reviews> Reviews { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
