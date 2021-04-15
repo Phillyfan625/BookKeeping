@@ -39,9 +39,9 @@ namespace BookKeeping.Controllers
              bList.Reviews = (from r in _context.Reviews
                              where r.BookKeeperID == id
                              select r).ToList();
-            rList.Clients = (from c in _context.Client
-                             where c.BookKeeperID == id
-                             select c).ToList();
+            //rList.Clients = (from c in _context.Client
+            //                 where c.BookKeeperID == id
+            //                 select c).ToList();
 
             return View(details);
         } 

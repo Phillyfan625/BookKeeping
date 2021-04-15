@@ -9,11 +9,12 @@ namespace BookKeeping.Models
     public class Reviews
     {
         [Key]
-        public int ReviewID { get; set; } 
-        public int ClientID { get; set; } 
+        public int ReviewID { get; set; }
+        public int ClientID { get; set; }
         public string Comment { get; set; } 
         public int Rating { get; set; } 
         public int BookKeeperID { get; set; }
-        public IEnumerable<Client> Clients { get; set; }
+        //public IEnumerable<Client> Clients { get; set; }
+
     }
 }

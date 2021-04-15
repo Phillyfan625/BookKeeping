@@ -16,6 +16,7 @@ namespace BookKeeping.Models
         public string Image { get; set; }
         public string Description { get; set; }
         public IEnumerable<Reviews> Reviews { get; set; }
+      
 
     }
 }

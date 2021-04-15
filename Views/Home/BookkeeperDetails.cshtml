@@ -1,5 +1,7 @@
 ﻿@model BookKeeper
-
+    <head>
+        <script src="https://kit.fontawesome.com/5b1e557ff8.js" crossorigin="anonymous"></script>
+    </head>
 
 <button onclick="openForm()">Hire Me!</button>
 
@@ -18,6 +20,10 @@
     </form>
 </div>
 
+<div>
+    
+</div>
+
 <div class="detailsprofile">
     <img class="imgdetailsprofile" src="~/images/profilepic.png" />
     <h3>@Model.FirstName @Model.LastName</h3> 
@@ -27,15 +33,27 @@
 </div>
 
 <hr /> 
+<div> 
+    <span class="glyphicon glyphicon-star"></span>
+</div>
 <div class="container">
     @foreach (Reviews reviews in Model.Reviews)
     {
-            <div><img src="~/images/full-stars.png" /></div>
+            <div>
+                @for (int i = 0; i < reviews.Rating; i++)
+                {
+                    <span class="fas fa-star"></span>
+                }
+                @for (int i = reviews.Rating; i < 5; i++)
+                {
+                    <span class="far fa-star "></span>
+                }
+            </div>
             <div><i>"@reviews.Comment"</i></div> 
-            @foreach (var c in reviews.Clients)
+            @*@foreach (var c in reviews.Clients)
             {
                 <div>@c.FirstName @c.LastName</div>
-            }
+            }*@
         <hr />
     }
 </div>
