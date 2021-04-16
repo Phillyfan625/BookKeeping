@@ -84,19 +84,6 @@ body {
 .thumbnails { 
 }
 
-#star4 {
-
-}
-
-#star3 {
-}
-
-#star2 {
-}
-
-#star1 {
-}
-
 /*BookkeeperDetails Page*/
 .detailsprofile { 
     background-color: lightgrey;
@@ -107,4 +94,14 @@ body {
     height: 150px;
     float: left;
 }
+
+
+.starfull {
+    background-image: url('/images/full-stars.png');
+    min-width: 32px;
+    min-height: 32px;
+    display: inline-block;
+    cursor: pointer;
+}
+
 

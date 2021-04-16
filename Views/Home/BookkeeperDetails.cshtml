@@ -33,21 +33,15 @@
 </div>
 
 <hr /> 
-<div> 
-    <span class="glyphicon glyphicon-star"></span>
-</div>
+
 <div class="container">
     @foreach (Reviews reviews in Model.Reviews)
     {
             <div>
                 @for (int i = 0; i < reviews.Rating; i++)
                 {
-                    <span class="fas fa-star"></span>
-                }
-                @for (int i = reviews.Rating; i < 5; i++)
-                {
-                    <span class="far fa-star "></span>
-                }
+                    <span class="starfull"></span>
+                }             
             </div>
             <div><i>"@reviews.Comment"</i></div> 
             @*@foreach (var c in reviews.Clients)
