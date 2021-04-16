@@ -14,7 +14,6 @@ namespace BookKeeping.Models
         public string Comment { get; set; } 
         public int Rating { get; set; } 
         public int BookKeeperID { get; set; }
-        //public IEnumerable<Client> Clients { get; set; }
 
     }
 }

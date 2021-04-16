@@ -13,8 +13,9 @@ namespace BookKeeping.Controllers
     {
         private readonly BookKeepingContext _context;
 
+        private BookKeeperListModel blmList = new BookKeeperListModel();
         private BookKeeper bList = new BookKeeper();
-        private Reviews rList = new Reviews();
+        private Client cList = new Client();
 
         public HomeController(BookKeepingContext context)
         {
@@ -23,12 +24,8 @@ namespace BookKeeping.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            blmList.Bookkeepers = _context.BookKeeper.ToList();
+            return View(blmList);
         }
 
         public ViewResult BookkeeperDetails(int id)
@@ -36,13 +33,12 @@ namespace BookKeeping.Controllers
             var details = (from b in _context.BookKeeper
                            where b.BookKeeperID == id
                            select b).FirstOrDefault();
-             bList.Reviews = (from r in _context.Reviews
+            bList.Clients = (from c in _context.Client
+                             where c.BookKeeperID == id
+                             select c).ToList();
+            cList.Reviews = (from r in _context.Reviews
                              where r.BookKeeperID == id
                              select r).ToList();
-            //rList.Clients = (from c in _context.Client
-            //                 where c.BookKeeperID == id
-            //                 select c).ToList();
-
             return View(details);
         } 
 

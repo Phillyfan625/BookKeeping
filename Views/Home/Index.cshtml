@@ -1,4 +1,4 @@
-﻿@model BookKeeper
+﻿@model BookKeeperListModel
 
 
 
@@ -7,43 +7,32 @@
     <link href="~/css/form.css" rel="stylesheet" type="text/css" />
 }
 
+<header classs="jumbotron text-center">
+    <img src="~/images/Logo.png" class="img-fluid center-block" />
+</header>
 
-
-
-<script>function openForm() {
-        document.getElementById("myForm").style.display = "block";
+<div class="row">
+    @foreach (BookKeeper bookKeeper in Model.Bookkeepers)
+    {
+        <div class="col-md-3">
+            <div class="img-thumbnail mt-3 thumbnails">
+                <img class="imgprofile" src="~/images/profilepic.png" />
+                <div class="figure-caption text-center">
+                    <a asp-action="BookkeeperDetails" asp-controller="Home" asp-route-id="@bookKeeper.BookKeeperID">
+                        @bookKeeper.FirstName @bookKeeper.LastName
+                    </a>
+                    <h6>@bookKeeper.Description</h6>
+                    <hr />
+                    <div class="BookKeeperRatings">
+                        <img src="~/images/full-stars.png" class="4star float-left" />
+                        <h6 class="text-right">@bookKeeper.PayRate.ToString("c")/hr</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
-
-    function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-    }
-    </script>
-
-<div class="text-center">
-    <h1 class="display-4">Clients</h1>
-
-    <p>Bob Barker</p>
-    
-
-
-    <div class="form-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-            <h1>Login</h1>
-
-           
-
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-
-                <button type="submit" class="btn">Login</button>
-                <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-    </div>
-
-
 </div>
+
+
 
 

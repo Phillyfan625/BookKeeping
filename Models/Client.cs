@@ -13,5 +13,6 @@ namespace BookKeeping.Models
         public string PhoneNumber { get; set; } 
         public string EmailAddress { get; set; } 
         public int BookKeeperID { get; set; }
+        public IEnumerable<Reviews> Reviews { get; set; }
     }
 }

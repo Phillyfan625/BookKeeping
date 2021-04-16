@@ -2,8 +2,18 @@
     <head>
         <script src="https://kit.fontawesome.com/5b1e557ff8.js" crossorigin="anonymous"></script>
     </head>
+<script type="text/javascript">
+    function openForm() {
+        //document.getElementById("myForm").style.display = "block"; 
+        $(".form-popup").show();
+    } 
 
-<button onclick="openForm()">Hire Me!</button>
+    function closeForm() {
+        $(".form-popup").hide();
+    }
+</script>
+
+<button class="open-button" onclick="openForm()">Hire Me!</button>
 
 <div class="form-popup" id="myForm">
     <form action="/action_page.php" class="form-container">
@@ -37,19 +47,19 @@
 <hr /> 
 
 <div class="container">
-    @foreach (Reviews reviews in Model.Reviews)
+    @foreach (Client client in Model.Clients)
     {
+        <div>@client.FirstName @client.LastName</div>
+        @foreach (var r in client.Reviews)
+        {
             <div>
-                @for (int i = 0; i < reviews.Rating; i++)
+                @for (int i = 0; i < r.Rating; i++)
                 {
                     <span class="starfull"></span>
-                }             
+                }
             </div>
-            <div><i>"@reviews.Comment"</i></div> 
-            @*@foreach (var c in reviews.Clients)
-            {
-                <div>@c.FirstName @c.LastName</div>
-            }*@
+            <div><i>"@r.Comment"</i></div>
+        }
         <hr />
     }
 </div>

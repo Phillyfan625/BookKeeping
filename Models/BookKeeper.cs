@@ -15,8 +15,8 @@ namespace BookKeeping.Models
         public string FirstName { get; set; }
         public string Image { get; set; }
         public string Description { get; set; }
-        public IEnumerable<Reviews> Reviews { get; set; }
-      
+        public IEnumerable<Client> Clients { get; set; }
+
 
     }
 }
