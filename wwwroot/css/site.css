@@ -95,6 +95,10 @@ body {
     float: left;
 }
 
+.detailsprofileinfo {
+    position: static;
+    padding-left: 160px;
+}
 
 .starfull {
     background-image: url('/images/full-stars.png');
