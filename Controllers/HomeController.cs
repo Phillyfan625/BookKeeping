@@ -16,6 +16,7 @@ namespace BookKeeping.Controllers
         private BookKeeperListModel blmList = new BookKeeperListModel();
         private BookKeeper bList = new BookKeeper();
         private Client cList = new Client();
+        private BookKeeperViewModel details = new BookKeeperViewModel();
 
         public HomeController(BookKeepingContext context)
         {
@@ -30,7 +31,7 @@ namespace BookKeeping.Controllers
 
         public ViewResult BookkeeperDetails(int id)
         {
-            var details = (from b in _context.BookKeeper
+            details.bookKeeper = (from b in _context.BookKeeper
                            where b.BookKeeperID == id
                            select b).FirstOrDefault();
             bList.Clients = (from c in _context.Client
@@ -41,6 +42,13 @@ namespace BookKeeping.Controllers
                              select r).ToList();
             return View(details);
         } 
+
+        [HttpPost] 
+        public ActionResult AddReview(int rating, string comment, string firstname, string lastname)
+        {
+
+            return RedirectToAction("Index");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

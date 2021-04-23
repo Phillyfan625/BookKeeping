@@ -1,38 +1,33 @@
 ﻿@model BookKeeperListModel
-
-
-
-@{
-    ViewData["Title"] = "Home Page";
-    <link href="~/css/form.css" rel="stylesheet" type="text/css" />
-}
-
 <header classs="jumbotron text-center">
-    <img src="~/images/Logo.png" class="img-fluid center-block" />
+    <img src="~/images/logo.png" class="img-fluid center-block" />
 </header>
 
 <div class="row">
     @foreach (BookKeeper bookKeeper in Model.Bookkeepers)
     {
         <div class="col-md-3">
-            <div class="img-thumbnail mt-3 thumbnails">
-                <img class="imgprofile" src="~/images/profilepic.png" />
-                <div class="figure-caption text-center">
-                    <a asp-action="BookkeeperDetails" asp-controller="Home" asp-route-id="@bookKeeper.BookKeeperID">
-                        @bookKeeper.FirstName @bookKeeper.LastName
-                    </a>
-                    <h6>@bookKeeper.Description</h6>
-                    <hr />
-                    <div class="BookKeeperRatings">
-                        <img src="~/images/full-stars.png" class="4star float-left" />
-                        <h6 class="text-right">@bookKeeper.PayRate.ToString("c")/hr</h6>
-                    </div>
+            <div class="card mt-3">
+                <img class="card-img-top" src="~/images/profilepic.png" />
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a style="color: #35C987" asp-action="BookkeeperDetails" asp-controller="Home"
+                           asp-route-id="@bookKeeper.BookKeeperID">
+                            @bookKeeper.FirstName @bookKeeper.LastName
+                        </a>
+                    </h5>
+                    <h6 class="card-text">@bookKeeper.Description</h6>
                 </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item BookKeeperRatings">
+                            <img src="~/images/full-stars.png" class="float-left starsize"/>
+                            <h6 class="text-right">@bookKeeper.PayRate.ToString("c")/hr</h6>
+                        </li>
+                    </ul>
+                
             </div>
         </div>
     }
 </div>
-
-
 
 

@@ -84,7 +84,9 @@ body {
     max-height: 100%;
 }
 
-.thumbnails {
+.starsize { 
+    width: 25px; 
+    height: 25px;
 }
 
 /*BookkeeperDetails Page*/
@@ -106,10 +108,17 @@ body {
 
 .starfull {
     background-image: url('/images/full-stars.png');
-    min-width: 32px;
-    min-height: 32px;
+    min-width: 30px;
+    min-height: 30px;
     display: inline-block;
     cursor: pointer;
+}
+
+.starempty { 
+    background-image: url('/images/no-stars.png'); 
+    min-width: 25px; 
+    min-height: 25px; 
+    display: inline-block;
 }
 
 .open-button {
@@ -119,7 +128,6 @@ body {
     border: none;
     cursor: pointer;
     opacity: 0.8;
-    position: fixed;
     bottom: 23px;
     right: 28px;
     width: 280px;
@@ -127,7 +135,7 @@ body {
 
 .form-popup {
     display: none;
-    position: fixed;
+/*    position: fixed;*/
     bottom: 0px;
     right: 15px;
     border: 3px solid #f1f1f1;
@@ -154,7 +162,7 @@ body {
 }
 
 .form-container .btn {
-        background-color: #4CAF50;
+        background-color: #35C987;
         color: white;
         padding: 16px 20px;
         border: none;
@@ -162,7 +170,7 @@ body {
         width: 100%;
         margin-bottom: 10px;
         opacity: 0.8;
-}
+    }
 
 .form-container .cancel {
         background-color: red;
@@ -170,4 +178,12 @@ body {
 
 .form-container .btn:hover, .open-button:hover {
         opacity: 1;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
 }
