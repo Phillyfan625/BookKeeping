@@ -44,16 +44,17 @@ namespace BookKeeping.Controllers
         } 
 
         [HttpPost] 
-        public ActionResult AddReview(int rating, string comment, string firstname, string lastname)
+        public ActionResult AddReview(int rating, string comment, string firstName, string lastName, int id)
         {
+            var client = new Client { FirstName = firstName, LastName = lastName, BookKeeperID = id };
+            _context.Add(client);
+            _context.SaveChanges();
 
-            return RedirectToAction("Index");
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var clientid = client.ClientID;
+            var review = new Reviews { Comment = comment, Rating = rating, BookKeeperID = id, ClientID = clientid};
+            _context.Add(review);
+            _context.SaveChanges();
+            return RedirectToAction("BookkeeperDetails", new { id = id });
         }
 
     }

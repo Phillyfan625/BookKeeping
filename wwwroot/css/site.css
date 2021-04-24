@@ -109,16 +109,16 @@ body {
 
 .starfull {
     background-image: url('/images/full-stars.png');
-    min-width: 30px;
-    min-height: 30px;
+    width: 30px;
+    height: 30px;
     display: inline-block;
     cursor: pointer;
 }
 
 .starempty { 
     background-image: url('/images/no-stars.png'); 
-    min-width: 25px; 
-    min-height: 25px; 
+    width: 30px; 
+    height: 30px; 
     display: inline-block;
 }
 
