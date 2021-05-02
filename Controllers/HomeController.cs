@@ -40,6 +40,7 @@ namespace BookKeeping.Controllers
             cList.Reviews = (from r in _context.Reviews
                              where r.BookKeeperID == id
                              select r).ToList();
+
             return View(details);
         } 
 

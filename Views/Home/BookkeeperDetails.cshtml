@@ -50,9 +50,21 @@
         <img class="imgdetailsprofile" src="~/images/profilepic.png" />
         <div class="detailsprofileinfo">
             <h3>@Model.bookKeeper.FirstName @Model.bookKeeper.LastName</h3>
-            <h6>@Model.bookKeeper.Description</h6>
-            <h3>Phone Number: @Model.bookKeeper.PhoneNumber</h3>
-            <h3>Email: @Model.bookKeeper.EmailAddress</h3>
+            <h6>@Model.bookKeeper.Description</h6> 
+            <table>
+                <tr>
+                    <th></th> 
+                    <th></th>
+                </tr> 
+                <tr>
+                    <th><label>Phone Number:</label></th> 
+                    <th><p class="cell-space">@Model.bookKeeper.PhoneNumber</p></th>
+                </tr>
+                <tr>
+                    <th><label>Email:</label></th>
+                    <th><p class="cell-space">@Model.bookKeeper.EmailAddress</p></th>
+                </tr>
+            </table>
         </div>
     </div>
 
